@@ -1,2 +1,2 @@
-//export const BACKENDURL = "https://avbsbackend.onrender.com";
- export const BACKENDURL = "http://localhost:5000";
+export const BACKENDURL = "https://flight-booking-system-newd.onrender.com";
+ //export const BACKENDURL = "http://localhost:5000";
