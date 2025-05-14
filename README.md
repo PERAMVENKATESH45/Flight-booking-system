@@ -34,7 +34,7 @@ To run this project locally, follow these steps:
 1. Clone the repository:
 
 ```bash
-git clone https://https://github.com/PERAMVENKATESH45/Flight-booking-system
+git clone https://github.com/PERAMVENKATESH45/Flight-booking-system
 ```
 
 2. Navigate to the project directory:
