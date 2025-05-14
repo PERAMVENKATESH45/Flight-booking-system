@@ -47,10 +47,11 @@ function Navbar() {
               </Link>
             </li>
             <li>
-              <Link className="hover:text-gray-500" href="#">
-                Contact us
-              </Link>
+              <a href="#contact" className="hover:text-gray-500">
+                 Contact us
+              </a>
             </li>
+
           </ul>
         </div>
         <div className="flex items-center gap-6">
