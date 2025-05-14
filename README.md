@@ -93,5 +93,5 @@ Contributions to this project are welcome! To contribute:
 4. Push to the branch (`git push origin feature/my-feature`).
 5. Create a new pull request.
 
-Please ensure your contributions adhere to the [code of conduct](CODE_OF_CONDUCT.md).
+
 
