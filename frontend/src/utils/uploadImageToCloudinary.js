@@ -6,7 +6,6 @@ const uploadImageToCloudinary = async (file) => {
 
   uploadData.append("file", file);
   uploadData.append("upload_preset", upload_preset);
-  uploadData.append("cloud_name", cloud_name);
 
   const res = await fetch(
     `https://api.cloudinary.com/v1_1/${cloud_name}/image/upload`,
@@ -15,6 +14,11 @@ const uploadImageToCloudinary = async (file) => {
       body: uploadData,
     }
   );
+
+  if (!res.ok) {
+    const errorText = await res.text();
+    throw new Error(`Cloudinary upload failed: ${errorText}`);
+  }
 
   const data = await res.json();
   return data;
