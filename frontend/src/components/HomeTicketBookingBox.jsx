@@ -13,7 +13,14 @@ const HomeTicketBookingBox = () => {
 
   return (
     <div className="py-[50px] max-w-[1400px] mx-auto">
-      <div className="flex flex-col ">
+      {/* 🔔 Notice Banner */}
+      <div className="bg-yellow-100 border border-yellow-300 text-yellow-800 px-6 py-3 rounded-xl mb-6 text-center font-medium">
+        ✈️ Flights are only available between these cities: <br />
+        <span className="font-semibold">Chennai, Bangalore, Mumbai, Delhi, Kolkata</span>
+      </div>
+
+      {/* Booking Form */}
+      <div className="flex flex-col">
         <div className="flex gap-5 items-center justify-start mb-5">
           <div className="flex justify-center items-center gap-2">
             <input type="radio" name="ticketType" id="oneWay" defaultChecked />
@@ -33,7 +40,6 @@ const HomeTicketBookingBox = () => {
                 type="text"
                 placeholder="Delhi"
                 className="outline-none text-[30px] max-w-[300px]"
-                // onChange={handleFormDataChange}
               />
             </div>
             <div className="flex flex-col p-5 border-t-[1px] xl:border-l-[1px] xl:border-t-0 border-gray-300">
@@ -43,18 +49,16 @@ const HomeTicketBookingBox = () => {
                 type="text"
                 placeholder="Mumbai"
                 className="outline-none text-[30px] max-w-[300px]"
-                // onChange={handleFormDataChange}
               />
             </div>
           </div>
-          <div className="flex gap-5 border-[1px]  border-gray-300 rounded-[20px]">
+          <div className="flex gap-5 border-[1px] border-gray-300 rounded-[20px]">
             <div className="flex flex-col p-5">
               <h1>Departure Date</h1>
               <input
                 name="departDate"
                 type="date"
                 className="outline-none text-[20px] sm:text-[30px] w-full"
-                // onChange={handleFormDataChange}
               />
             </div>
           </div>
@@ -65,7 +69,6 @@ const HomeTicketBookingBox = () => {
                 name="flightType"
                 id="flightType"
                 className="w-full text-xl mt-3 outline-none border-none"
-                // onChange={handleFormDataChange}
               >
                 <option value="Economy">Economy</option>
                 <option value="Premium">Premium</option>
