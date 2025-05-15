@@ -9,7 +9,7 @@ const LetGetToKnow = () => {
           className="text-4xl md:text-6xl font-bold text-center
         text-white max-w-[400px] md:max-w-[700px] mb-5"
         >
-          Find special prices to favorite destinations
+          The sky is not the limit, it's just the beginning.
         </h1>
 {/*         <button className="bg-white text-black mt-3 px-8 py-3 rounded-xl hover:bg-gray-300 transition duration-200 md:mt-5">
           Book now
