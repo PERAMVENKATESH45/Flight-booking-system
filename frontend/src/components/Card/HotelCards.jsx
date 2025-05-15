@@ -24,9 +24,7 @@ const HotelCards = (props) => {
             <HiLocationMarker />
             <p>{props.data.country}</p>
           </div>
-          <button className="bg-black hover:bg-[#1E293B] w-full text-white px-5 py-2 mt-5 rounded-lg transition duration-100">
-            Book Flight now
-          </button>
+         
         </div>
       </div>
     </div>
