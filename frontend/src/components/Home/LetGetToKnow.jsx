@@ -11,9 +11,9 @@ const LetGetToKnow = () => {
         >
           Find special prices to favorite destinations
         </h1>
-        <button className="bg-white text-black mt-3 px-8 py-3 rounded-xl hover:bg-gray-300 transition duration-200 md:mt-5">
+{/*         <button className="bg-white text-black mt-3 px-8 py-3 rounded-xl hover:bg-gray-300 transition duration-200 md:mt-5">
           Book now
-        </button>
+        </button> */}
       </div>
     </div>
   );
