@@ -17,6 +17,8 @@ import AddFlight from "../admin/AddFlight";
 import VerifyTicket from "../admin/VerifyTicket";
 import VerifyTicketAdmin from "../components/VerifyTicketAdmin";
 import Profile from "../page/Profile";
+import Bookings from "../page/bookings"; // Adjust path if the file is elsewhere
+
 
 // ProtectedRoute component to handle admin-only routes
 const ProtectedRoute = ({ element: Element, ...rest }) => {
@@ -34,6 +36,7 @@ const AppRoutes = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/search" element={<TicketSearchPage />} />
+       <Route path="/bookings" element={<Bookings />} /> 
         <Route path="/book/:id" element={<TicketBooking />} />
         <Route path="/ticket/:ticketId" element={<Ticket />} />
         <Route path="/checkout-page" element={<CheckoutPage />} />
