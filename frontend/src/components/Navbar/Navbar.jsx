@@ -37,21 +37,20 @@ function Navbar() {
         >
           <ul className="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
             <li>
-              <Link to={"/search"} className="hover:text-gray-500" href="#">
-                Search Flights
-              </Link>
-            </li>
-            <li>
-              <Link className="hover:text-gray-500" href="#">
-                
-              </Link>
-            </li>
-            <li>
-              <a href="#contact" className="hover:text-gray-500">
-                 Contact us
-              </a>
-            </li>
-
+    <Link to={"/search"} className="hover:text-gray-500">
+      Search Flights
+    </Link>
+  </li>
+  <li>
+    <Link to={"/bookings"} className="hover:text-gray-500">
+      My Bookings
+    </Link>
+  </li>
+  <li>
+    <a href="#contact" className="hover:text-gray-500">
+      Contact us
+    </a>
+  </li>
           </ul>
         </div>
         <div className="flex items-center gap-6">
