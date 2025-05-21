@@ -4,17 +4,31 @@ import Airline from "../models/airlineSchema.js";
 // Controller to add a new airline
 
 export const getFlights = async (req, res) => {
-  const { from, to, departDate, arriveDate } = req.body;
+  const { from, to, departDate } = req.body;
   console.log("req body", req.body);
 
   try {
-    // Find flights based on the provided criteria
-    const flights = await Flight.find({
-      from: from,
-      to: to,
-      departDate: departDate,
-    });
-    console.log(flights);
+    const query = {};
+
+    if (from && from.trim() !== "") query.from = new RegExp(from, "i");
+    if (to && to.trim() !== "") query.to = new RegExp(to, "i");
+
+    // If client sent a departDate, use it; else filter for today or later
+    if (departDate && departDate.trim() !== "") {
+      query.departDate = departDate;
+    } else {
+      // Get today’s date in 'YYYY-MM-DD' format
+      const today = new Date();
+      const yyyy = today.getFullYear();
+      const mm = String(today.getMonth() + 1).padStart(2, "0");
+      const dd = String(today.getDate()).padStart(2, "0");
+      const todayStr = `${yyyy}-${mm}-${dd}`;
+
+      // Use MongoDB $gte operator to get flights from today or later
+      query.departDate = { $gte: todayStr };
+    }
+
+    const flights = await Flight.find(query);
 
     if (flights.length === 0) {
       return res
@@ -22,17 +36,14 @@ export const getFlights = async (req, res) => {
         .json({ status: false, message: "No flights found" });
     }
 
-    // Populate the 'airline' field with the corresponding airline data
     const flightsWithAirlineInfo = await Promise.all(
       flights.map(async (flight) => {
-        // Populate the 'airline' field with the corresponding airline data
         const populatedFlight = await Flight.populate(flight, {
           path: "airline",
         });
-        // Here, the 'airline' field in 'populatedFlight' should already be populated with the airline data
 
         return {
-          ...populatedFlight.toObject(), // Convert Mongoose document to plain JavaScript object
+          ...populatedFlight.toObject(),
           airlineLogo: populatedFlight.airline.airlineLogo,
         };
       })
@@ -44,6 +55,7 @@ export const getFlights = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
+
 
 export const addAirline = async (req, res) => {
   const { airlineLogo, airlineName } = req.body;
